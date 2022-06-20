@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.kusaanko.iosbackupbrowser'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'com.github.kusaanko.iosbackupbrowser.iOSBackupBrowser'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation('com.googlecode.plist:dd-plist:1.23')
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15to18
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15to18', version: '1.71'
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.3'
+}
+
+test {
+    useJUnitPlatform()
+}
